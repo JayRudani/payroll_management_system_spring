@@ -21,16 +21,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.payrollmanagementsystem.exception.ResourceNotFoundException;
 import com.project.payrollmanagementsystem.model.Saluation;
 import com.project.payrollmanagementsystem.repository.SaluationRepository;
+import com.project.payrollmanagementsystem.service.SaluationService;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class SaluationController {
 	@Autowired
-	private SaluationRepository saluationRepository;
+	private SaluationService saluationService;
 
 	@GetMapping("/saluations")
 	public List<Saluation> getAllSaluations() {
-		return saluationRepository.findAll();
+		return saluationService.getAllSaluations();
 	}
 }

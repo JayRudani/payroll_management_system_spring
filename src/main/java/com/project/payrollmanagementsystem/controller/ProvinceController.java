@@ -1,13 +1,9 @@
 package com.project.payrollmanagementsystem.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,21 +19,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.payrollmanagementsystem.exception.ResourceNotFoundException;
-import com.project.payrollmanagementsystem.model.Employee;
-import com.project.payrollmanagementsystem.model.Login;
-import com.project.payrollmanagementsystem.repository.LoginRepository;
-import com.project.payrollmanagementsystem.service.LoginService;
+import com.project.payrollmanagementsystem.model.Province;
+import com.project.payrollmanagementsystem.repository.ProvinceRepository;
+import com.project.payrollmanagementsystem.service.ProvinceService;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1")
-public class LoginController {
-	
+public class ProvinceController {
 	@Autowired
-	private LoginService loginService;
-		
-	@PostMapping("/login")
-	public ArrayList checkLogin(@Valid @RequestBody Login login) {
-		return loginService.checkLogin(login);
+	private ProvinceService provinceService;
+
+	@GetMapping("/province")
+	public List<Province> getAllProvinces() {
+		return provinceService.getAllProvinces();
 	}
 }

@@ -25,19 +25,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.payrollmanagementsystem.exception.ResourceNotFoundException;
 import com.project.payrollmanagementsystem.model.Employee;
 import com.project.payrollmanagementsystem.model.Login;
+import com.project.payrollmanagementsystem.repository.EmployeeRepository;
 import com.project.payrollmanagementsystem.repository.LoginRepository;
-import com.project.payrollmanagementsystem.service.LoginService;
+import com.project.payrollmanagementsystem.service.EmployeeLoginService;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1")
-public class LoginController {
+public class EmployeeLoginController {
 	
 	@Autowired
-	private LoginService loginService;
+	private EmployeeLoginService employeeLoginService;
 		
-	@PostMapping("/login")
-	public ArrayList checkLogin(@Valid @RequestBody Login login) {
-		return loginService.checkLogin(login);
+	@PostMapping("/employeelogin")
+	public Employee checkLogin(@Valid @RequestBody Employee employee) {
+		
+		return employeeLoginService.checkLogin(employee);
+		
 	}
 }

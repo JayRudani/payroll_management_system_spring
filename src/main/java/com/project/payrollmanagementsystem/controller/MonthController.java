@@ -21,16 +21,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.payrollmanagementsystem.exception.ResourceNotFoundException;
 import com.project.payrollmanagementsystem.model.Month;
 import com.project.payrollmanagementsystem.repository.MonthRepository;
+import com.project.payrollmanagementsystem.service.MonthService;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class MonthController {
+	
 	@Autowired
-	private MonthRepository monthRepository;
+	private MonthService monthService;
 
 	@GetMapping("/months")
 	public List<Month> getAllMonths() {
-		return monthRepository.findAll();
+		return monthService.getAllMonths();
 	}
 }
