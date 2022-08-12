@@ -1,12 +1,14 @@
 package com.project.payrollmanagementsystem.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Table(name = "employee_login")
 @Entity(name = "employee_login")
 public class EmployeeLogin {
 
+	@Id
 	private String employee_email;
 	private String employee_password;
 	

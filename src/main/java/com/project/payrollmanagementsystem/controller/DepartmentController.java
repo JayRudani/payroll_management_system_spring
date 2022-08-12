@@ -1,9 +1,13 @@
 package com.project.payrollmanagementsystem.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +38,44 @@ public class DepartmentController {
 	@GetMapping("/departments")
 	public List<Department> getAllDepartments() {
 		return departmentService.getAllDepartments();
+	}
+
+	@GetMapping("/departments/search/{name}")
+	public List<Department> getDepartmentByName(@PathVariable(value = "name") String departmentName) {
+			return departmentService.getDepartmentByName(departmentName);
+	}
+	
+	@GetMapping("/departments/search-province/{province}")
+	public List<Department> searchUserByProvince(@PathVariable(value = "province") String departmentProvince) {
+			return departmentService.searchUserByProvince(departmentProvince);
+	}
+	
+	@GetMapping("/departments/all-departments")
+	public ArrayList getAllDepartmentFields() {
+		return departmentService.getAllDepartmentFields();
+	}
+	
+	@GetMapping("/departments/{id}")
+	public ResponseEntity<Department> getDepartmentById(@PathVariable(value = "id") Long departmentId)
+			throws ResourceNotFoundException {
+		return departmentService.getDepartmentById(departmentId);
+	}
+
+	@PostMapping("/departments")
+	public Department createDepartment(@Valid @RequestBody Department department) {
+		return departmentService.createDepartment(department);
+	}
+
+	@PutMapping("/departments/{id}")
+	public ResponseEntity<Department> updateDepartment(@PathVariable(value = "id") Long departmentId,
+			@Valid @RequestBody Department departmentDetails) throws ResourceNotFoundException {
+		return departmentService.updateDepartment(departmentId,departmentDetails);
+		
+	}
+
+	@DeleteMapping("/departments/{id}")
+	public Map<String, Boolean> deleteDepartment(@PathVariable(value = "id") Long departmentId)
+			throws ResourceNotFoundException {
+		return departmentService.deleteDepartment(departmentId);
 	}
 }

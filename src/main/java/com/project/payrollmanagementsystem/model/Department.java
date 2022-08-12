@@ -15,11 +15,7 @@ import javax.persistence.Table;
 public class Department {
 
 	private long department_id;
-	private String department_name;
-	
-	@OneToOne(fetch=FetchType.LAZY, mappedBy="department")
-    private Employee employee;
-	
+	private String department_name;	
 	
 	public Department() {
 		
