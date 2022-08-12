@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.payrollmanagementsystem.exception.ResourceNotFoundException;
 import com.project.payrollmanagementsystem.model.Employee;
+import com.project.payrollmanagementsystem.model.EmployeeLogin;
 import com.project.payrollmanagementsystem.model.Login;
 import com.project.payrollmanagementsystem.repository.EmployeeRepository;
 import com.project.payrollmanagementsystem.repository.LoginRepository;
@@ -38,7 +39,7 @@ public class EmployeeLoginController {
 	private EmployeeLoginService employeeLoginService;
 		
 	@PostMapping("/employeelogin")
-	public Employee checkLogin(@Valid @RequestBody Employee employee) {
+	public EmployeeLogin checkLogin(@Valid @RequestBody EmployeeLogin employee) {
 		
 		return employeeLoginService.checkLogin(employee);
 		

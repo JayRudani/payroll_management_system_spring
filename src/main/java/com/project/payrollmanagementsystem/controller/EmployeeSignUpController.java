@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.payrollmanagementsystem.model.Employee;
+import com.project.payrollmanagementsystem.model.EmployeeLogin;
 import com.project.payrollmanagementsystem.service.EmployeeLoginService;
 import com.project.payrollmanagementsystem.service.EmployeeSignUpService;
 
@@ -22,7 +23,7 @@ public class EmployeeSignUpController {
 	private EmployeeSignUpService employeeSignUpService;
 		
 	@PostMapping("/employeesignup")
-	public Employee signup(@Valid @RequestBody Employee employee) {
+	public EmployeeLogin signup(@Valid @RequestBody EmployeeLogin employee) {
 		
 		return employeeSignUpService.signup(employee);
 		

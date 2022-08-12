@@ -4,15 +4,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.payrollmanagementsystem.model.Employee;
+import com.project.payrollmanagementsystem.model.EmployeeLogin;
+import com.project.payrollmanagementsystem.repository.EmployeeLoginRepository;
 import com.project.payrollmanagementsystem.repository.EmployeeRepository;
 
 @Service
 public class EmployeeSignUpService {
 
 	@Autowired
-	private EmployeeRepository employeeRepo;
+	private EmployeeLoginRepository employeeRepo;
 	
-	public Employee signup(Employee employee) {
+	public EmployeeLogin signup(EmployeeLogin employee) {
 		
 		return employeeRepo.save(employee);
 	}

@@ -32,7 +32,6 @@ public class Employee {
 	private String employee_department;
 	private String employee_dob;
 	private String employee_nationalty;
-	private String employee_password;
 	
 	public Employee() {
 		
@@ -42,7 +41,7 @@ public class Employee {
 			String employee_last_name, String employee_gender, String employee_address, String employee_city,
 			String employee_province, String employee_country, String employee_mobile,
 			String employee_email, String employee_status, String employee_department, String employee_dob,
-			String employee_nationalty,String employee_password) {
+			String employee_nationalty) {
 		super();
 		this.employee_id = employee_id;
 		this.employee_sal = employee_sal;
@@ -61,7 +60,6 @@ public class Employee {
 		this.employee_department = employee_department;
 		this.employee_dob = employee_dob;
 		this.employee_nationalty = employee_nationalty;
-		this.employee_password=employee_password;
 	}	
 
 	@Id
@@ -200,14 +198,6 @@ public class Employee {
 
 	public void setEmployee_nationalty(String employee_nationalty) {
 		this.employee_nationalty = employee_nationalty;
-	}
-	
-	public String getEmployee_password() {
-		return employee_password;
-	}
-
-	public void setEmployee_password(String employee_password) {
-		this.employee_password = employee_password;
 	}
 
 	@Override
