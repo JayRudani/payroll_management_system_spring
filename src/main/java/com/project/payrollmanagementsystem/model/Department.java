@@ -17,8 +17,8 @@ public class Department {
 	private long department_id;
 	private String department_name;
 	
-	@OneToOne(fetch=FetchType.LAZY, mappedBy="department")
-    private Employee employee;
+//	@OneToOne(fetch=FetchType.LAZY, mappedBy="department")
+//    private Employee employee;
 	
 	
 	public Department() {

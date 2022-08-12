@@ -80,7 +80,6 @@ public class EmployeeController {
 				results.put("employee_city",employee_details.getEmployee_city());
 				results.put("employee_province",employee_details.getEmployee_province());
 				results.put("employee_country",employee_details.getEmployee_country());
-//				results.put("employee_landline",employee_details.getEmployee_landline());
 				results.put("employee_mobile",employee_details.getEmployee_mobile());
 				results.put("employee_email",employee_details.getEmployee_email());
 				results.put("employee_status",employee_details.getEmployee_status());

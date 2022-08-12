@@ -45,12 +45,12 @@ public class SalaryController {
 
 	@GetMapping("/salaries/search/{name}")
 	public List<Salary> getSalaryByName(@PathVariable(value = "name") String salaryName) {
-			return salaryRepository.serchUserByName(salaryName);
+			return salaryRepository.searchUserByName(salaryName);
 	}
 	
-	@GetMapping("/salaries/search-state/{state}")
-	public List<Salary> serchUserByState(@PathVariable(value = "state") String salaryState) {
-			return salaryRepository.serchUserByState(salaryState);
+	@GetMapping("/salaries/search-province/{province}")
+	public List<Salary> searchUserByProvince(@PathVariable(value = "province") String salaryProvince) {
+			return salaryRepository.searchUserByProvince(salaryProvince);
 	}
 	
 	@GetMapping("/salaries/all-salaries")
@@ -78,14 +78,6 @@ public class SalaryController {
 				results.put("salary_month",String.valueOf(salary_details.getSalary_month()));
 				results.put("salary_working_days",String.valueOf(salary_details.getSalary_working_days()));
 				results.put("salary_basic",String.valueOf(salary_details.getSalary_basic()));
-				results.put("salary_hra",String.valueOf(salary_details.getSalary_hra()));
-				results.put("salary_mediclaim",String.valueOf(salary_details.getSalary_mediclaim()));
-				results.put("salary_ta",String.valueOf(salary_details.getSalary_ta()));
-				results.put("salary_da",String.valueOf(salary_details.getSalary_da()));
-				results.put("salary_reimbursement",String.valueOf(salary_details.getSalary_reimbursement()));
-				results.put("salary_ca",String.valueOf(salary_details.getSalary_ca()));
-				results.put("salary_others",String.valueOf(salary_details.getSalary_others()));
-				results.put("salary_dpf",String.valueOf(salary_details.getSalary_dpf()));
 				results.put("salary_dtax",String.valueOf(salary_details.getSalary_dtax()));
 				results.put("salary_desc",String.valueOf(salary_details.getSalary_desc()));
 				results.put("salary_total",String.valueOf(salary_details.getSalary_total()));
